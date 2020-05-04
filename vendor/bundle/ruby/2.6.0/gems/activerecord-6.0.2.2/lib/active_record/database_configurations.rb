@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-require "active_record/database_configurations/database_config"
-require "active_record/database_configurations/hash_config"
-require "active_record/database_configurations/url_config"
+require "active_record/nfigurations/nfig"
+require "active_record/nfigurations/hash_config"
+require "active_record/nfigurations/url_config"
 
 module ActiveRecord
   # ActiveRecord::DatabaseConfigurations returns an array of DatabaseConfig

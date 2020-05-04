@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Kanta</title>
+    <title><%= @title%></title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +10,9 @@
   </head>
 
   <body>
+    <h1 style="font-size:22pt;color:red;">
+      <%= @header%>
+    </h1>
     <%= yield %>
   </body>
 </html>

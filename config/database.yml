@@ -5,35 +5,61 @@
 #
 # And be sure to use new-style password hashing:
 #   http://dev.mysql.com/doc/refman/5.0/en/old-client.html
-development:
-  adapter: mysql2
-  encoding: utf8
-  reconnect: false
-  database: test-mysql2_development
+
+  default: &default
+  adapter: sqlite3
   pool: 5
-  username: root
-  password:
-  socket: /tmp/mysql.sock
+  timeout: 5000
+
+  development:
+  <<: *default
+  database: db/development.sqlite3
+
+  test:
+  <<: *default
+  database: db/development.sqlite3
+
+  production:
+  <<: *default
+  database: db/development.sqlite3
+
+
+# mysqlが壊れたためコメントアウトしました
+# 開発中の設定
+# development:
+#   adapter: mysql2
+#   encoding: utf8
+#   reconnect: false
+#   database: test-mysql2_development
+#   host: localhost
+#   pool: 5
+#   username: root
+#   password: 0036
+#   socket: /tmp/mysql.sock
+#   timeout: 10000
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
-test:
-  adapter: mysql2
-  encoding: utf8
-  reconnect: false
-  database: test-mysql2_test
-  pool: 5
-  username: root
-  password:
-  socket: /tmp/mysql.sock
+# test:
+#   adapter: mysql2
+#   encoding: utf8
+#   reconnect: false
+#   database: test-mysql2_test
+#   host: localhost
+#   pool: 5
+#   username: root
+#   password: 0036
+#   socket: /tmp/mysql.sock
 
-production:
-  adapter: mysql2
-  encoding: utf8
-  reconnect: false
-  database: test-mysql2_production
-  pool: 5
-  username: root
-  password:
-  socket: /tmp/mysql.sock
+# 正式にリリースしたときの設定
+# production:
+#   adapter: mysql2
+#   encoding: utf8
+#   reconnect: false
+#   database: test-mysql2_production
+#   host: localhost
+#   pool: 5
+#   username: root
+#   password: 0036
+#   socket: /tmp/mysql.sock

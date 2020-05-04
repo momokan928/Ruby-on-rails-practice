@@ -1,8 +1,10 @@
 class HeroController < ApplicationController
 
   def index
+    
+    @title ="かんたのrailsデビュー"
+    @header = "かんたのrailsデビュー"
     if request.post? then
-      @title = 'Result'
       if params['s1'] then
         @msg = 'you selected:'
         for val in params['s1']
